@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./resourses/deventest-fav-icon.png" type="image/x-icon">
+    <title>Workspace Flow</title>
+    <!-- font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./index.css" />
+</head>
+
+<body>
+    <div class="app">
+        <!-- Header -->
+        <div class="app-header">
+
+            <h1>✨ Workspace Flow</h1>
+            <p>Add your tasks and organize your workflow with simple drag and drop.</p>
+
+            <!-- Task Statistics -->
+            <div class="stats-bar">
+                <div class="stat-box">
+                    <span>Total Tasks:</span>
+                    <strong class="total-tasks-count">0</strong>
+                </div>
+
+                <div class="stat-box">
+                    <span>Completed:</span>
+                    <strong class="completed-tasks-count active-status">0</strong>
+                </div>
+            </div>
+
+            <!-- <div class="app-footer">
+                Drag tasks between the columns to update their status
+            </div> -->
+        </div>
+
+        <!-- Add Task -->
+        <div class="input-section">
+            <input type="text" id="add-inp" placeholder="Add your task..." autocomplete="off" />
+
+            <button type="button" id="add-btn">
+                <span>Add Task</span>
+            </button>
+        </div>
+
+        <!-- Main Board -->
+        <div class="container">
+            <!-- To Do Column -->
+
+            <div class="column-wrapper">
+                <div class="column-title">
+                    <h2>To Do List</h2>
+                    <p>Tasks that need your attention</p>
+                </div>
+
+                
+                <!-- To Do Drop Area -->
+                <div class="drop todo-drop">
+                    <!-- Empty message -->
+
+                    <div class="empty-message">
+                        <div class="empty-icon">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </div>
+
+                        <h3>Add your first task</h3>
+
+                        <p>Your new tasks will appear here</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Completed Column -->
+            <div class="column-wrapper">
+                <div class="column-title">
+                    <h2>Completed Tasks</h2>
+
+                    <p>Finished tasks will appear here</p>
+                </div>
+
+                <!-- Completed Drop Area -->
+
+                <div class="drop completed-drop">
+                    <!-- Empty message -->
+
+                    <div class="empty-message">
+                        <div class="empty-icon">
+                            <i class="fa-regular fa-face-frown"></i>
+                        </div>
+                        <div>
+                            <h3>No completed tasks</h3>
+                            <p>Drag a task here when you finish it</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>

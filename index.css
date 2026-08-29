@@ -1,0 +1,521 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Love+Ya+Like+A+Sister&family=Outfit:wght@100..900&family=Playwrite+BR+Guides&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  padding: 40px 40px 0px 40px;
+  color: #edf3f0;
+  background-repeat: no-repeat;
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(42, 145, 111, 0.55) 0%,
+      rgba(42, 145, 110, 0.15) 25%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      rgba(35, 135, 102, 0.454) 0%,
+      rgba(35, 135, 102, 0.14) 25%,
+      transparent 40%
+    ),
+    #0d1512;
+}
+
+/* =========================
+   MAIN APP
+========================= */
+
+.app {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.app-header {
+  text-align: center;
+  margin-bottom: 38px;
+  animation: fadeIn 0.8s ease;
+}
+
+.app-header h1 {
+  margin-bottom: 9px;
+  color: #f1f6f3;
+  font-size: 2.7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.app-header p {
+  color: #899a92;
+  font-size: 0.82rem;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.stat-box {
+  padding: 8px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 30px;
+  background: rgba(23, 37, 31, 0.78);
+  color: #87968f;
+  font-size: 0.7rem;
+  box-shadow: 0 0px 40px rgba(21, 114, 86, 0.375);
+}
+
+strong {
+  margin-left: 4px;
+  color: #51c99d;
+}
+
+/* =========================
+   BOARD
+========================= */
+
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.column-wrapper {
+  width: 100%;
+  margin-top: 20px;
+  animation: boardAppear 0.7s ease;
+}
+
+/* =========================
+   COLUMN TITLE
+========================= */
+
+.column-title {
+  margin-bottom: 1rem;
+}
+
+.column-title h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #d9e8e2;
+  letter-spacing: 0.5px;
+  line-height: 30px;
+}
+
+.column-title p {
+  color: #7f9289;
+  font-size: 1rem;
+}
+
+/* =========================
+   INPUT SECTION
+========================= */
+
+.input-section {
+  max-width: 450px;
+  height: 59px;
+  margin: auto;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgba(67, 184, 143, 0.24);
+  border-radius: 14px 0px 14px 14px;
+  background: #1a2722;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.28);
+  transition: 0.3s ease;
+}
+
+.input-section:focus-within {
+  border-color: rgba(67, 184, 143, 0.48);
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.3),
+    0 0 24px rgba(30, 125, 94, 0.15);
+}
+
+#add-inp {
+  flex: 1;
+  height: 100%;
+  padding: 0 19px;
+  border: none;
+  border-radius: 14px 0px 14px 14px;
+  outline: none;
+  background: transparent;
+  color: #e1ebe7;
+  font-size: 0.81rem;
+}
+
+#add-inp::placeholder {
+  color: #7c8c85;
+}
+
+/* =========================
+   ADD BUTTON
+========================= */
+
+#add-btn {
+  min-width: 105px;
+  border: none;
+  background: #286f57;
+  border-radius: 10px 0px;
+  color: #dcece6;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+
+  transition: transform 0.25s ease;
+}
+
+#add-btn:hover {
+  background: #328366;
+  color: #ffffff;
+  box-shadow: -5px 0 22px rgba(35, 102, 79, 0.25);
+}
+
+#add-btn:active {
+  transform: scale(0.95);
+  transition: none;
+}
+
+/* =========================
+   DROP AREA
+========================= */
+
+.drop {
+  width: 100%;
+  min-height: 390px;
+  padding: 11px;
+  padding-bottom: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.085);
+  border-radius: 18px;
+  background: rgba(25, 38, 33, 0.72);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 25px 55px rgba(0, 0, 0, 0.25);
+  transition:
+    border 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =========================
+   DRAG OVER
+========================= */
+
+/* js add */
+.dropColor {
+  border: 1px dashed rgba(67, 184, 143, 0.7);
+  background: rgba(29, 125, 94, 0.12);
+  box-shadow:
+    0 0 30px rgba(29, 125, 94, 0.18),
+    inset 0 0 20px rgba(29, 125, 94, 0.06);
+}
+
+/* =========================
+   TASK CARD
+========================= */
+.dragitem {
+  width: 100%;
+  min-height: 66px;
+  margin-bottom: 10px;
+  padding: 10px 11px 10px 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(72, 188, 148, 0.19);
+  border-radius: 13px;
+  background: linear-gradient(135deg, #28745b, #1d5946);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+  cursor: grab;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border 0.25s ease;
+  animation: taskAppear 0.35s ease;
+}
+
+.dragitem:last-child {
+  margin-bottom: 0;
+}
+
+.dragitem:hover {
+  transform: translateY(-3px);
+  border-color: rgba(72, 188, 147, 0.534);
+  box-shadow:
+    0 13px 28px rgba(0, 0, 0, 0.34),
+    0 0 20px rgba(29, 125, 94, 0.14);
+}
+
+.dragitem:active {
+  cursor: grabbing;
+  transform: scale(0.985);
+  transition: none;
+}
+
+/* =========================
+   TASK TEXT
+========================= */
+.dragitem h3 {
+  color: #e5efeb;
+  font-size: 0.81rem;
+  font-weight: 600;
+  line-height: 1.4;
+  word-break: normal;
+}
+
+/* =========================
+   DELETE BUTTON
+========================= */
+.delete-btn {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9px;
+  background: rgba(8, 18, 14, 0.3);
+  color: #8da099;
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.delete-btn:hover {
+  border-color: rgba(190, 80, 80, 0.35);
+  background: rgba(150, 40, 40, 0.16);
+  color: #e28b8b;
+  transform: scale(1.06);
+}
+
+/* =========================
+   EMPTY MESSAGE
+========================= */
+
+.empty-message {
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: emptyAppear 0.4s ease;
+}
+
+.empty-message h3 {
+  margin-bottom: 7px;
+  color: #718078;
+  font-size: 0.79rem;
+  font-weight: 600;
+}
+
+.empty-message p {
+  color: #56645e;
+  font-size: 0.65rem;
+}
+
+.empty-icon {
+  width: 58px;
+  height: 58px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(67, 184, 143, 0.18);
+  border-radius: 16px;
+  background: rgba(42, 145, 111, 0.08);
+  color: #51c99d;
+  font-size: 1.35rem;
+  box-shadow: 0 0 25px rgba(42, 145, 111, 0.08);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes boardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes taskAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes emptyAppear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 800px) {
+  body {
+    padding: 35px 15px;
+  }
+
+  .app-header h1 {
+    font-size: 2.3rem;
+  }
+
+  .input-section {
+    height: 50px;
+  }
+
+  .column-title h2 {
+    letter-spacing: -0.7px;
+  }
+
+  .column-title p {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .drop {
+    min-height: 300px;
+  }
+
+  .dragitem {
+    min-height: 55px;
+  }
+
+  .empty-message {
+    min-height: 270px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  body {
+    padding: 28px 12px;
+  }
+
+  .app-header {
+    margin-bottom: 28px;
+  }
+
+  .app-header h1 {
+    font-size: 1.9rem;
+  }
+
+  .app-header p {
+    font-size: 0.7rem;
+  }
+
+  .stats-bar {
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .stat-box {
+    min-width: 145px;
+  }
+
+  .input-section {
+    height: 45px;
+  }
+
+  #add-inp {
+    padding: 0 14px;
+    font-size: 0.75rem;
+  }
+
+  #add-btn {
+    min-width: 75px;
+    font-size: 0.7rem;
+  }
+
+  .column-title h2 {
+    font-size: 1.2rem;
+    letter-spacing: -0.7px;
+  }
+
+  .column-title p {
+    font-size: 0.7rem;
+  }
+
+  .drop {
+    min-height: 270px;
+    padding: 9px;
+    border-radius: 16px;
+  }
+
+  .dragitem {
+    min-height: 45px;
+    padding: 6px;
+    padding-left: 13px;
+  }
+
+  .dragitem h3 {
+    font-size: 0.74rem;
+  }
+
+  .delete-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .empty-message {
+    min-height: 250px;
+  }
+}
