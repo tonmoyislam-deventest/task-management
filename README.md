@@ -11,7 +11,7 @@ The main goal of this project was to practice DOM manipulation, Drag and Drop, L
 ## 📸 Preview
 
 <p align="center">
-  <img src="./resourses/task-management.jpeg" alt="Project-image" width="100%">
+  <img src="./resourses/task-managemnt.png" alt="Project-image" width="100%">
 </p>
 
 
