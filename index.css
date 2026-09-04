@@ -45,7 +45,7 @@ body {
 .app-header {
   text-align: center;
   margin-bottom: 38px;
-  animation: fadeIn 0.8s ease;
+  animation: fadeIn 1.3s ease;
 }
 
 .app-header h1 {
@@ -102,7 +102,7 @@ strong {
 .column-wrapper {
   width: 100%;
   margin-top: 20px;
-  animation: boardAppear 0.7s ease;
+  animation: boardAppear 1.2s ease;
 }
 
 /* =========================
@@ -324,7 +324,7 @@ strong {
   justify-content: center;
   align-items: center;
   text-align: center;
-  animation: emptyAppear 0.4s ease;
+  animation: emptyAppear 0.6s ease;
 }
 
 .empty-message h3 {
