@@ -6,7 +6,7 @@ The main goal of this project was to practice DOM manipulation, Drag and Drop, L
 
 ## 🌐 Live Demo
 
-- **Live Link:** [Liv-Demo]()
+- **Live Link:** [Live-Link](https://tonmoyislam-deventest.github.io/task-management/)
 
 ## 📸 Preview
 
